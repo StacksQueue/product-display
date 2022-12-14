@@ -1,0 +1,39 @@
+mat-card {
+  max-width: 150px !important;
+}
+
+.image-wrapper {
+  background-color: #ffffff;
+
+  .fit-image {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+  }
+}
+
+.product-content {
+  display: grid;
+
+  .price {
+    font-size: x-large;
+    font-weight: 600;
+    padding: 5px 0 10px 0;
+  }
+
+  .name {
+    padding: 15px 0;
+    font-weight: 600;
+  }
+
+  .weight {
+    color: gray;
+    // padding: 15px 0;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  padding: 5px 0;
+}

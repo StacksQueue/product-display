@@ -1,1 +1,20 @@
-<p>product-card works!</p>
+<mat-card>
+  <div class="image-wrapper">
+    <img src="https://picsum.photos/300/200.jpg" class="fit-image" alt="" />
+  </div>
+  <div class="product-content">
+    <div class="price">{{ 5.0 | currency : 'USD'}}</div>
+    <div class="name">Biana Organic White Spelt Fuslili</div>
+    <div class="weight">500g</div>
+  </div>
+  <div class="actions">
+    <button
+      mat-mini-fab
+      matTooltip="Warn"
+      color="primary"
+      aria-label="Example mini fab with a heart icon"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</mat-card>

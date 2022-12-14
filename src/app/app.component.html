@@ -1,1 +1,10 @@
-<router-outlet></router-outlet>
+<mat-drawer-container>
+  <mat-drawer-content>
+    <app-product-list></app-product-list>
+  </mat-drawer-content>
+  <mat-drawer mode="side" [opened]="opened" position="end">
+    <app-added-product-list></app-added-product-list>
+  </mat-drawer>
+</mat-drawer-container>
+
+<!-- <router-outlet></router-outlet> -->

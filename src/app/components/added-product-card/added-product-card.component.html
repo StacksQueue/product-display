@@ -1,0 +1,16 @@
+<mat-card class="added-product">
+  <div class="item-image">
+    <img src="https://picsum.photos/300/200.jpg" alt="" />
+  </div>
+  <div class="item-name">asdf</div>
+  <div class="item-desc">adsf</div>
+  <div class="item-qty">
+    <mat-form-field>
+        <input
+          type="number"
+          matInput
+          name="value">
+      </mat-form-field>
+  </div>
+  <div class="item-price">{{ 7500 | currency: "USD" }}</div>
+</mat-card>

@@ -1,0 +1,32 @@
+.page-container {
+  padding: 10px 20px;
+  position: relative;
+  min-height: calc(100vh - 100px);
+  // min-height: 100vh;
+}
+
+.product-list-wrapper {
+  padding: 0 10px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-gap: 20px;
+}
+
+.view-cart-container {
+  position: absolute;
+  bottom: 60px;
+  right: 5px;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ecefa3;
+}
+
+mat-paginator {
+  position: absolute;
+  bottom: 1;
+  width: 100%;
+}
