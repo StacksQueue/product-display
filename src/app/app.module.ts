@@ -10,6 +10,8 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { AddedProductListComponent } from './components/added-product-list/added-product-list.component';
 import { AddedProductCardComponent } from './components/added-product-card/added-product-card.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,16 @@ import { AddedProductCardComponent } from './components/added-product-card/added
     ProductListComponent,
     ProductCardComponent,
     AddedProductListComponent,
-    AddedProductCardComponent
+    AddedProductCardComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

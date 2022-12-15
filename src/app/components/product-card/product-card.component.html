@@ -1,11 +1,11 @@
 <mat-card>
-  <div class="image-wrapper">
-    <img src="https://picsum.photos/300/200.jpg" class="fit-image" alt="" />
+  <div class="image-wrapper" (click)="viewProductDetail()">
+    <img [src]="product.thumbnail" class="fit-image" alt="" />
   </div>
   <div class="product-content">
-    <div class="price">{{ 5.0 | currency : 'USD'}}</div>
-    <div class="name">Biana Organic White Spelt Fuslili</div>
-    <div class="weight">500g</div>
+    <div class="price">{{ product.price | currency : 'USD'}}</div>
+    <div class="name">{{product.title}}</div>
+    <div class="weight">{{product.stock}} left</div>
   </div>
   <div class="actions">
     <button
@@ -14,7 +14,7 @@
       color="primary"
       aria-label="Example mini fab with a heart icon"
     >
-      <mat-icon>add</mat-icon>
+      <mat-icon (click)="addProductToCart()">add</mat-icon>
     </button>
   </div>
 </mat-card>

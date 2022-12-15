@@ -3,14 +3,21 @@
     <img src="https://picsum.photos/300/200.jpg" alt="" />
   </div>
   <div class="item-name">asdf</div>
-  <div class="item-desc">adsf</div>
   <div class="item-qty">
+    <mat-icon>add</mat-icon>
     <mat-form-field>
-        <input
-          type="number"
-          matInput
-          name="value">
-      </mat-form-field>
+      <input type="number" matInput name="value" />
+    </mat-form-field>
+    <mat-icon>remove</mat-icon>
   </div>
   <div class="item-price">{{ 7500 | currency: "USD" }}</div>
+  <div class="close">
+    <button
+      mat-icon-button
+      color="primary"
+      aria-label="Example icon button with a home icon"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
 </mat-card>

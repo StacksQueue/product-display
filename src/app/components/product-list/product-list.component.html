@@ -1,7 +1,8 @@
 <div class="page-container">
-  <div class="product-list-wrapper">
+  <div class="product-list-wrapper" [class.openside]="opened">
     <app-product-card
-      *ngFor="let prod of [1, 2, 3, 4, 5, 6]"
+      *ngFor="let prod of productlist"
+      [product]="prod"
     ></app-product-card>
   </div>
   <div class="view-cart-container clickable" (click)="cartClicked()">

@@ -8,8 +8,8 @@
 .product-list-wrapper {
   padding: 0 10px;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  grid-gap: 20px;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-gap: 24px;
 }
 
 .view-cart-container {
@@ -23,6 +23,12 @@
   justify-content: center;
   align-items: center;
   background: #ecefa3;
+}
+
+.openside {
+  display: grid !important;
+  grid-gap: 24px !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 mat-paginator {

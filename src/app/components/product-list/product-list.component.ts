@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Pagination } from 'src/app/models/Pagination';
 import { ProductService } from '../services/product.service';
+import { Product } from 'src/app/models/Products';
 
 @Component({
   selector: 'app-product-list',
@@ -15,9 +17,23 @@ export class ProductListComponent implements OnInit {
     limit: 10,
     pageSizeOption: [5, 10, 25, 100],
   };
-  constructor(private productService: ProductService) {}
+  opened: boolean = true;
+  productlist: any = [];
+  constructor(
+    private productService: ProductService,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.activatedRoute.queryParams.subscribe((params) =>
+      this.queryParamsHandler(params)
+    );
+
+    this.productService.getProducts().subscribe((resp) => {
+      this.productlist = resp['products']
+      console.log(this.productlist)
+    });
+  }
 
   paginate(event: PageEvent) {
     console.log(event);
@@ -26,5 +42,9 @@ export class ProductListComponent implements OnInit {
   cartClicked() {
     console.log('cart clicked');
     this.productService.cartSubject.next('nice');
+  }
+
+  queryParamsHandler(params: Params) {
+    this.opened = params['opened'] == 'true' ? params['opened'] : false;
   }
 }

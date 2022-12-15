@@ -12,33 +12,41 @@ mat-icon {
   align-items: center;
 }
 
-
 ::ng-deep .mat-form-field-infix {
-    width: 50px;
+  width: 20px;
 }
 
 .item-image {
-    width: 20%;
-    img {
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        object-fit: cover;
-    }
+  width: 15%;
+  img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
 }
 
 .item-name {
-    width: 15%;
+  width: 20%;
 }
 
 .item-desc {
-    width: 15%;
+  width: 15%;
 }
 
 .item-qty {
-    width: 15%;
+  width: 15%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .item-price {
-    width: 25%;
+  width: 15%;
+  font-size: 14px;
+  font-size: 600;
+}
+
+.close {
+  width: 10%;
 }
