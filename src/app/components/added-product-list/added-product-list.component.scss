@@ -4,3 +4,32 @@
   row-gap: 20px;
   align-content: start;
 }
+
+.detail-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 0px;
+  border-top: 1px solid;
+  p {
+    margin: 0;
+    font-size: 12px;
+  }
+
+  p:first-child {
+    width: 40%;
+    text-transform: uppercase;
+    /* color: #285192; */
+    font-weight: 500;
+  }
+
+  p:nth-child(2) {
+    width: 60%;
+    white-space: pre-wrap;
+    word-break: keep-all;
+  }
+}
+
+.mat-flat-button.mat-primary {
+  width: 100% !important;
+}
