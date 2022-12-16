@@ -1,6 +1,11 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpParams,
+} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, Subject, throwError } from 'rxjs';
+import { Pagination } from 'src/app/models/Pagination';
 import { Product } from 'src/app/models/Products';
 
 @Injectable({
@@ -8,7 +13,7 @@ import { Product } from 'src/app/models/Products';
 })
 export class ProductService {
   cartSubject = new Subject();
-  productSubject = new Subject<Product>()
+  productSubject = new Subject<Product>();
 
   constructor(private https: HttpClient) {}
 
@@ -16,9 +21,14 @@ export class ProductService {
     return this.cartSubject.asObservable();
   }
 
-  getProducts(): Observable<any> {
+  getProducts(pagination: Pagination): Observable<any> {
+    let params = new HttpParams();
+    let skip = pagination.page * pagination.limit
+    params = params.append('limit', pagination.limit);
+    params = params.append('skip', 0);
+    console.log(params)
     return this.https
-      .get('https://dummyjson.com/products', {})
+      .get('https://dummyjson.com/products', {params})
       .pipe(catchError(this.handleError));
   }
 

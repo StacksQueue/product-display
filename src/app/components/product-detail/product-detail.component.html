@@ -1,45 +1,39 @@
-<div class="product-container">
-  <div class="description">
-    <hr class="hr" />
-    <div class="detail-wrapper">
-      <p>title</p>
-      <p>{{ data.title }}</p>
+<div class="sec-container">
+  <div class="product-container">
+    <div class="image-wrapper">
+      <img [src]="data.thumbnail" class="fit-image" alt="" />
     </div>
-    <hr class="hr" />
-    <div class="detail-wrapper">
-      <p>brand</p>
-      <p>{{ data.brand }}</p>
-    </div>
-    <hr class="hr" />
-    <div class="detail-wrapper">
-      <p>price</p>
-      <p>{{ data.price | currency: 'USD' }}</p>
-    </div>
-    <hr class="hr" />
-    <div class="detail-wrapper">
-      <p>description</p>
-      <p>{{ data.description }}</p>
-    </div>
-    <hr class="hr" />
-    <div class="detail-wrapper">
-      <p>Discount Percentage</p>
-      <p>{{ data.discountPercentage }}</p>
-    </div>
-    <hr class="hr" />
-    <div class="detail-wrapper">
-      <p>rating</p>
-      <p>{{ data.rating }}</p>
-    </div>
-    <hr class="hr" />
+    <div class="description">
+      <div class="title">{{ data.title }}</div>
+      <div class="price">{{ data.price | currency: "USD" }}</div>
 
-    <div class="detail-wrapper">
-      <p>stock</p>
-      <p>{{ data.stock }}</p>
+      <div class="action">
+        <button mat-flat-button color="primary" (click)="addProductToCart()">
+          ADD TO CART
+        </button>
+      </div>
+      <div class="rating">
+        <mat-icon>star</mat-icon>
+        <span>{{ data.rating }} </span>
+      </div>
+      <!-- specs -->
+      <hr class="hr" />
+      <div class="detail-wrapper">
+        <p>brand</p>
+        <p>{{ data.brand }}</p>
+      </div>
+      <div class="detail-wrapper">
+        <p>description</p>
+        <p>{{ data.description }}</p>
+      </div>
+      <div class="detail-wrapper">
+        <p>category</p>
+        <p>{{ data.category }}</p>
+      </div>
+      <div class="detail-wrapper">
+        <p>stock</p>
+        <p>{{ data.stock }}</p>
+      </div>
     </div>
-
-    <hr class="hr" />
-  </div>
-  <div class="image-wrapper">
-    <img src="https://picsum.photos/300/200.jpg" class="fit-image" alt="" />
   </div>
 </div>

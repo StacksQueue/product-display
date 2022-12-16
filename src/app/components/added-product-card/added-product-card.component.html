@@ -1,16 +1,17 @@
 <mat-card class="added-product">
   <div class="item-image">
-    <img src="https://picsum.photos/300/200.jpg" alt="" />
+    <img [src]="addedProduct.thumbnail" alt="" />
   </div>
-  <div class="item-name">asdf</div>
+  <div class="item-name">{{addedProduct.title}}</div>
   <div class="item-qty">
     <mat-icon>add</mat-icon>
-    <mat-form-field>
-      <input type="number" matInput name="value" />
-    </mat-form-field>
-    <mat-icon>remove</mat-icon>
+      <span>1</span>
+      <mat-icon>remove</mat-icon>
+    <div class="quantity-increment">
+      
+    </div>
   </div>
-  <div class="item-price">{{ 7500 | currency: "USD" }}</div>
+  <div class="item-price">{{ addedProduct.price | currency: "USD" }}</div>
   <div class="close">
     <button
       mat-icon-button

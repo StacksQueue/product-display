@@ -1,4 +1,4 @@
-<mat-card>
+<!-- <mat-card>
   <div class="image-wrapper" (click)="viewProductDetail()">
     <img [src]="product.thumbnail" class="fit-image" alt="" />
   </div>
@@ -17,4 +17,28 @@
       <mat-icon (click)="addProductToCart()">add</mat-icon>
     </button>
   </div>
-</mat-card>
+</mat-card> -->
+
+<div class="card">
+  <div class="image-wrapper">
+    <img
+      class="fit-image"
+      [src]="product.thumbnail"
+      alt=""
+    />
+    <div class="title-price">
+      <div class="title">{{ product.title }}</div>
+      <div class="price">{{ product.price | currency: "USD" }}</div>
+    </div>
+    <!-- <div class="ribbon"><a href="#">ribbon</a></div> -->
+  </div>
+  <div class="content">
+    <span class="brand">{{ product.brand }}</span>
+    <span class="category">{{ product.category }} </span>
+  </div>
+  <div class="actions">
+    <button mat-flat-button color="primary" (click)="addProductToCart()">ADD TO CART</button>
+    <button mat-stroked-button color="primary" (click)="viewProductDetail()">DETAILS</button>
+
+  </div>
+</div>

@@ -1,4 +1,12 @@
 <div class="page-container">
+  <div class="search-filter-wrapper">
+    <mat-form-field floatLabel="always">
+      <mat-label>Search Product</mat-label>
+      <input matInput placeholder="Type Here" autocomplete="off" />
+      <mat-icon matSuffix>search</mat-icon>
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+  </div>
   <div class="product-list-wrapper" [class.openside]="opened">
     <app-product-card
       *ngFor="let prod of productlist"

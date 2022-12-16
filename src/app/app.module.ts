@@ -21,17 +21,16 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
     ProductCardComponent,
     AddedProductListComponent,
     AddedProductCardComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
-
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
