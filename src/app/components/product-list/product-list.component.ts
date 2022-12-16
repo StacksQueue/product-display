@@ -7,7 +7,7 @@ import {
   Router,
 } from '@angular/router';
 import { Pagination } from 'src/app/models/Pagination';
-import { ProductService } from '../services/product.service';
+import { ProductService } from '../../services/product.service';
 import { Product } from 'src/app/models/Products';
 
 @Component({

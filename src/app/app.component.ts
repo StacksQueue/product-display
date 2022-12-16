@@ -12,7 +12,7 @@ import {
   Params,
   Router,
 } from '@angular/router';
-import { ProductService } from './components/services/product.service';
+import { ProductService } from './services/product.service';
 
 @Component({
   selector: 'app-root',
