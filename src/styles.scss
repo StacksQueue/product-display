@@ -41,3 +41,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .clickable {
   cursor: pointer;
 }
+
+.custom-snackbar {
+  background: #ecefa3;
+  font-weight: 500;
+  color: black;
+  text-align: center !important;
+}

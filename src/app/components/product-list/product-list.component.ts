@@ -9,6 +9,7 @@ import {
 import { Pagination } from 'src/app/models/Pagination';
 import { ProductService } from '../../services/product.service';
 import { Product } from 'src/app/models/Products';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-product-list',
@@ -19,10 +20,11 @@ export class ProductListComponent implements OnInit {
   pagination: Pagination = {
     length: 100,
     page: 1,
-    limit: 10,
+    limit: 25,
     pageSizeOption: [5, 10, 25, 100],
   };
   opened: boolean = true;
+  searchedWord = new FormControl('');
   productlist: any = [];
   constructor(
     private productService: ProductService,
@@ -37,19 +39,36 @@ export class ProductListComponent implements OnInit {
   }
 
   getProducts() {
-    this.productService.getProducts(this.pagination).subscribe((resp) => {
-      this.productlist = resp['products'];
-      console.log(this.productlist);
-    });
+    const searchword = this.searchedWord.value ? this.searchedWord.value : '';
+    this.productService
+      .getProducts(this.pagination, searchword)
+      .subscribe((resp) => {
+        if (resp && resp['success']) {
+          this.productlist = resp['data'];
+          this.pagination.length = resp['total'];
+        }
+      });
   }
 
+  searchProduct(event: Event) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        page: this.pagination.page,
+        limit: this.pagination.limit,
+        opened: this.opened,
+        search: this.searchedWord.value,
+      },
+    };
+    this.router.navigate(['/'], navigationExtras);
+  }
   paginate(event: PageEvent) {
     console.log(event);
     const navigationExtras: NavigationExtras = {
       queryParams: {
         page: event.pageIndex + 1,
         limit: event.pageSize,
-        opened: this.opened
+        opened: this.opened,
+        search: this.searchedWord.value,
       },
     };
     this.router.navigate(['/'], navigationExtras);
@@ -62,8 +81,10 @@ export class ProductListComponent implements OnInit {
 
   queryParamsHandler(params: Params) {
     this.opened = params['opened'] == 'true' ? params['opened'] : false;
-    this.pagination.limit = params['limit'] ? params['limit'] : 10;
+    this.pagination.limit = params['limit'] ? params['limit'] : 25;
     this.pagination.page = params['page'] ? params['page'] : 1;
+    const searchword = params['search'] ? params['search'] : '';
+    this.searchedWord.patchValue(searchword);
     this.getProducts();
   }
 }

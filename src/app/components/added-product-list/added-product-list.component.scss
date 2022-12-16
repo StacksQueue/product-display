@@ -1,8 +1,22 @@
 .borrowed-item-container {
-  padding: 20px 10px;
+  padding: 20px 20px 20px 10px;
   display: grid;
   row-gap: 20px;
   align-content: start;
+  height: 100%;
+}
+
+.no-products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  span {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 600;
+  }
 }
 
 .detail-wrapper {
@@ -11,20 +25,22 @@
   align-items: center;
   padding: 10px 0px;
   border-top: 1px solid;
+  text-align: end;
   p {
     margin: 0;
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 600;
   }
 
   p:first-child {
-    width: 40%;
+    width: 60%;
     text-transform: uppercase;
     /* color: #285192; */
     font-weight: 500;
   }
 
   p:nth-child(2) {
-    width: 60%;
+    width: 40%;
     white-space: pre-wrap;
     word-break: keep-all;
   }

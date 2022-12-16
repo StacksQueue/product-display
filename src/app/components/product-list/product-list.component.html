@@ -2,18 +2,33 @@
   <div class="search-filter-wrapper">
     <mat-form-field floatLabel="always">
       <mat-label>Search Product</mat-label>
-      <input matInput placeholder="Type Here" autocomplete="off" />
-      <mat-icon matSuffix>search</mat-icon>
+      <input
+        matInput
+        placeholder="Type Here"
+        autocomplete="off"
+        [formControl]="searchedWord"
+        (keyup.enter)="searchProduct($event)"
+      />
+      <mat-icon matSuffix (click)="searchProduct($event)">search</mat-icon>
       <!-- <mat-hint>Hint</mat-hint> -->
     </mat-form-field>
   </div>
-  <div class="product-list-wrapper" [class.openside]="opened">
-    <app-product-card
-      *ngFor="let prod of productlist"
-      [product]="prod"
-    ></app-product-card>
+  <div class="no-results" *ngIf="!productlist.length; else elseblock">
+    <span>no results available</span>
   </div>
-  <div class="view-cart-container clickable" (click)="cartClicked()">
+  <ng-template #elseblock>
+    <div class="product-list-wrapper" [class.openside]="opened">
+      <app-product-card
+        *ngFor="let prod of productlist"
+        [product]="prod"
+      ></app-product-card>
+    </div>
+  </ng-template>
+  <div
+    class="view-cart-container clickable"
+    [class.cart-openside]="opened"
+    (click)="cartClicked()"
+  >
     <mat-icon>shopping_cart</mat-icon>
   </div>
 </div>

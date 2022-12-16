@@ -12,6 +12,7 @@ import { AddedProductListComponent } from './components/added-product-list/added
 import { AddedProductCardComponent } from './components/added-product-card/added-product-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

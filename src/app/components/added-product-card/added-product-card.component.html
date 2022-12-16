@@ -2,23 +2,15 @@
   <div class="item-image">
     <img [src]="addedProduct.thumbnail" alt="" />
   </div>
-  <div class="item-name">{{addedProduct.title}}</div>
-  <div class="item-qty">
-    <mat-icon>add</mat-icon>
-      <span>1</span>
-      <mat-icon>remove</mat-icon>
-    <div class="quantity-increment">
-      
-    </div>
+  <div class="title-price">
+    <p class="item-name">{{ addedProduct.title }}</p>
+    <p class="item-price">{{ addedProduct.price | currency : "USD" }}</p>
   </div>
-  <div class="item-price">{{ addedProduct.price | currency: "USD" }}</div>
-  <div class="close">
-    <button
-      mat-icon-button
-      color="primary"
-      aria-label="Example icon button with a home icon"
-    >
-      <mat-icon>close</mat-icon>
-    </button>
+
+  <div class="item-qty">
+    <span>1</span>
+  </div>
+  <div class="circle clickable" (click)="removeAddedProduct()">
+    <mat-icon>close</mat-icon>
   </div>
 </mat-card>
